@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: demo.aux
+The style file: plain.bst
+Illegal, another \bibstyle command---line 40 of file demo.aux
+ : \bibstyle
+ :          {plain}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 41 of file demo.aux
+ : \bibdata
+ :         {##1}
+I'm skipping whatever remains of this command
+Database file #1: bazaLiterature.bib
+Warning--empty year in reiners98augmented
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            567 strings with 6277 characters,
+and the built_in function-call counts, 4333 in all, are:
+= -- 413
+> -- 213
+< -- 4
++ -- 85
+- -- 72
+* -- 265
+:= -- 705
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 75
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 173
+empty$ -- 359
+format.name$ -- 72
+if$ -- 935
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 12
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 121
+preamble$ -- 1
+purify$ -- 62
+quote$ -- 0
+skip$ -- 119
+stack$ -- 0
+substring$ -- 177
+swap$ -- 46
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 46
+warning$ -- 1
+while$ -- 38
+width$ -- 15
+write$ -- 143
+(There were 2 error messages)
