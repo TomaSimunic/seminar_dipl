@@ -23,13 +23,23 @@ Brainblocks
 
 \bibitem{Peercoin}
 PeerCoin
-\newblock{\em PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake}
+\newblock {\em PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake}
 \newblock https://peercoin.net/assets/paper/peercoin-paper.pdf
 
 \bibitem{Google}
 Google Pay
-\newblock{\em Google Pay - A better way to pay, by Google}
+\newblock {\em Google Pay - A better way to pay, by Google}
 \newblock https://pay.google.com/
+
+\bibitem{Bitcoin}
+Bitcoin
+\newblock {\em Bitcoin: A Peer-to-Peer Electronic Cash System}
+\newblock https://bitcoin.org/bitcoin.pdf
+
+\bibitem{Stress}
+Nano main-net stress test
+\newblock {\em Stress Testing The RaiBlocks Network: Part II}
+\newblock https://medium.com/@bnp117/stress-testing-the-raiblocks-network-part-ii-def83653b21f
 
 
 
