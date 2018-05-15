@@ -55,11 +55,21 @@ There are three major types of online payment systems:
 \subsection{Conventional payment processing}
 To accept an online payment, a merchant has to obtain an account from a bank and program the interaction with a credit card payment processor. The components interacting are customer, merchant, merchant's bank and credit card issuer.
 
-A \textbf{merchant's account} is a credit card account capable of receiving funds from his online customers. It is easier, more economical and convenient to establish a merchant account with a card company that provides a payment gateway.
+A \textbf{merchant's account} is a bank account capable of receiving funds from his online customers. It is easier, more economical and convenient to establish a merchant account with a company that provides a payment gateway.
 
 \textbf{Shopping cart software} is used to maintain a link between a customer and his set of selected items by allowing him to store items in the cart. It serves as a link between the merchant and the card processor.
 
 A \textbf{payment gateway}, also referred to as payment processor, connects the shopping cart with the merchant's bank and the customer's bank. It is a key component of online transactions. The payment gateway first verifies the card information. If everything is confirmed by the card company, an approval is sent to the payment gateway which communicates the confirmation with the shopping cart. Then, a payment settlement is initiated to transfer funds from the customer's to the merchant's account. 
+
+The whole process consists of two parts:
+\begin{enumerate}
+	\item authorization
+	\item settlement
+\end{enumerate}
+
+The authorization part start with the customer confirming his order and finishes with the payment processor notifying the customer that his order has been accepted.
+
+The settlement part starts periodically to send the amount that is owned by the issuing account to the acquiring account. 
 
 The whole Conventional payment process model is represented in Figure 1.
 
@@ -77,6 +87,8 @@ The third-party online payment process is similar to the conventional payment sy
 The \textbf{shopping cart} is still responsible for maintaining a connection between the customer and the selected items. When finished shopping, the customer is forwaded to a webpage maintained by the third-party payment provider to collect credit card information.
 
 The \textbf{payment gateway} authorizes the transaction and holds the funds in trust for the merchant. Transfer to the merchant's local bank account occurs on a regular basis, predetermined in the subscription contract.
+
+Modern services that could be categorized as third-party payment providers are \textbf{Google pay} and \textbf{Apple pay} \cite{Google}.
 
 \begin{figure}[t]
 	\caption{Third-party payment processing diagram}
@@ -160,11 +172,19 @@ In the Nano network each block contains only one transaction. A transaction is a
 The ledger is the global set of accounts where each account has its own transaction chain. This converts a seemingly shared distributed data structure into a non-shared distributed data structure. Each account's transaction chain is stored on Nano network nodes.
 
 \subsubsection{Node}
-A node is a piece of software running on a computer that conforms to the Nano protocol and participates in the Nano network. The node may either store the entire ledger or a pruned history containing only the last few blocks of each account's blockchain.  
+A node is a piece of software running on a computer that conforms to the Nano protocol and participates in the Nano network. The node may either store the entire ledger or a pruned history containing only the last few blocks of each account's blockchain. Nodes communicate with each other to update their ledger and to vote on dilemmas that occur in the network.
 
 \subsection{System overview}
 
-Nano uses a block-lattice structure which makes it the first cryptocurrency to do so. In the block-lattice structure every account has its own blockchain which is equivalent to the account's transaction history. The account-owned blockchain can only be updated by the private key owner. The nodes in the network are designated to keep the account's balance in check. Some nodes are uninterested in keeping the whole transaction history of an account so they store only the last transaction.
+Nano uses a block-lattice structure which makes it the first cryptocurrency to do so. In the block-lattice structure every account has its own blockchain which is equivalent to the account's transaction history. The account-owned blockchain can only be updated by the private key owner. The nodes in the network are designated to keep the account's balance in check. Some nodes are uninterested in keeping the whole transaction history of an account so they store only the last transaction. The last block in an account chain doesn't contain the last transaction information but contains the account balance.
+
+A block is created from the on the sender's chain and a different block is created on the receiver's chain to settle the new account balance.
+
+\begin{figure}
+	\caption{Visualization of the block-lattice \cite{Nano}}
+	\includegraphics[scale=0.6]{lattice}
+	\centering
+\end{figure}
 
 Each transaction in the Nano protocol is small enough to fit into a UDP packet. This feature gives the Nano network low-latency. Currently, there are four transaction types: 
 \begin{itemize}
@@ -179,21 +199,22 @@ They will soon be replaced by a Universal transaction which will keep each accou
 
 \subsubsection{Delegated Proof of Stake}
 
-The network reaches consensus via a delegated Proof of Stake voting mechanism. Nano accounts choose delegates using the change block. By choosing a delegate they delegate their voting power to that particular node. A vote is initiated when an account attempts to make a double-spend attack. A double-spend attack happens when an account attempts to spend the same funds more than once. When such an attack happens, the nodes vote on which transaction they will confirm. The remaining transactions are discarded.
+The network reaches consensus via a delegated Proof of Stake (PoS)voting mechanism. Proof of Stake was first presented by PeerCoin \cite{Peercoin} as an alternative to the electricity-inefficient Proof of Work consensus mechanism used by Bitcoin. The next block in the PoS network isn't mined by expensive equipment but is mined by a network participant that is chosen by wealth distribution and randomizing.
 
+Delegated Proof of Stake (DPoS) is a PoS variant which includes delegating your account wealth, which represents the users voting power, to a node that will vote on the users behalf. This is useful because the Nano network doesn't have block mining in the conventional sense which will be explained further. 
+
+Nano accounts choose delegates using the change block. Delegate nodes are called representatives in the Nano network. By choosing a representative they delegate their voting power to that particular representative's node. Nano users should pick representatives they trust to avoid someone using their votes to attack the Nano network. A vote is initiated when an account attempts to make a double-spend attack. A double-spend attack happens when an account attempts to spend the same funds more than once. When such an attack happens, the nodes vote on which transaction they will confirm. The remaining transactions are discarded.
+
+Representatives in the Nano network aren't awarded with new Nanos for securing the network. Their incentive for securing the network is that they can use the Nano currency as a payment option for their e-commerce or any other web activity. This provides merchants an option to enable online transactions for the cost of running a node which is much lower than paying an online payment processor fees ranging from 1-3\% per transaction. The cost of running a node ranges form 10-20\$, depending on the quality of the node that is needed for the web activity.
 \subsubsection{Proof of Work}
 
-For a transaction to be broadcasted to the network, Proof of Work has to be performed. Proof of work, also commonly referred to as mining, is performed by hashing the previous block in the account chain. The next transaction in an account chain can be pre-mined, since the previous block is already known, which makes transactions appear instantaneous to the end user. This can not be done in the Bitcoin network because a block in the Bitcoin network is a collection of transactions mined by many different actors and the block in the Nano network contains one transaction which can only be broadcasted and mined by the private-key holder.
+For a transaction to be broadcasted to the network, Proof of Work has to be performed. Proof of Work (PoW), also commonly referred to as mining, is performed by hashing the previous block in the account chain and is done by the device that is performing the transaction or by a device designated to perform the PoW. The next transaction in an account chain can be pre-mined, since the previous block is already known, which makes transactions appear instantaneous to the end user. This can not be done in the Bitcoin network because a block in the Bitcoin network is a collection of transactions mined by many different actors and the block in the Nano network contains one transaction which can only be broadcasted and mined by the private-key holder.
 
-Nano uses the Blake2b hashing algorithm to perform the work. In the Nano network, the Proof of Work difficulty is set low and is simply used as an anti-spamm tool. The Proof of Work in the Nano network doesn't take longer than a few seconds.
-
-
+Nano uses the Blake2b hashing algorithm to perform the work. In the Nano network, the Proof of Work difficulty is set low and is simply used as an anti-spamm tool. The benefit of using a low-difficulty PoW is that transactions seem near-instantaneous.
 
 
 \subsection{Nano performance}
-Nano offers near-instant transactions and does that without requesting fees. The Nano test-network scaled to 10000 transactions-per-second while the main-network has been tested on 300 transactions-per-second. In theory the scalability is unlimited and in praxis it is limited by the hardware that the nodes are using. The current traffic a node has on a monthly basis is around 1TB. This is because the information shared between the nodes hasn't been optimized. It will see a drastic decrease with the launch of Universal transactions. 
-
-Since every node has to acquire and share a lot of information in a small amount of time, a node also requires a high bandwidth. This requirement is made smaller by the fact that the Nano protocol uses UDP packets to broadcast transactions. The information that is shared between nodes has a lot of redundancies and will be optimized in the near future which will lower node requirements.
+Nano offers near-instant transactions and does that without requesting fees. The Nano test-network scaled to 10000 transactions-per-second while the main-network has been tested on 300 transactions-per-second. In theory the scalability is unlimited and in praxis it is limited by the hardware used by the node. Since every node has to acquire and share a lot of information in a small amount of time, a node also requires a high bandwidth.
 
 A node requires a voting power equal to 1/1000 of the total voting power to participate in the voting process. This makes the network more secure by not allowing small actors to delay the network with low-performing hardware.
 

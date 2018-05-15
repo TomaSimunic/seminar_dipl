@@ -21,6 +21,16 @@ Brainblocks
 \newblock {\em Brainblocks - easy checkout for Nano}
 \newblock https://brainblocks.io/
 
+\bibitem{Peercoin}
+PeerCoin
+\newblock{\em PPCoin: Peer-to-Peer Crypto-Currency with Proof-of-Stake}
+\newblock https://peercoin.net/assets/paper/peercoin-paper.pdf
+
+\bibitem{Google}
+Google Pay
+\newblock{\em Google Pay - A better way to pay, by Google}
+\newblock https://pay.google.com/
+
 
 
 \end{thebibliography}

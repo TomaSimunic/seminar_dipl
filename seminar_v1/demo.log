@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.19)  12 MAY 2018 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.19)  15 MAY 2018 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,24 +964,34 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 File: images/diagram1.jpg Graphic file (type jpg)
 
 <use images/diagram1.jpg>
-Package pdftex.def Info: images/diagram1.jpg used on input line 68.
+Package pdftex.def Info: images/diagram1.jpg used on input line 78.
 (pdftex.def)             Requested size: 429.30093pt x 598.63243pt.
- <images/diagram2.jpg, id=203, 738.76pt x 536.0025pt>
+ <images/diagram2.jpg, id=204, 738.76pt x 536.0025pt>
 File: images/diagram2.jpg Graphic file (type jpg)
 
 <use images/diagram2.jpg>
-Package pdftex.def Info: images/diagram2.jpg used on input line 83.
+Package pdftex.def Info: images/diagram2.jpg used on input line 95.
 (pdftex.def)             Requested size: 443.25941pt x 321.60397pt.
-
-<images/diagram3.jpg, id=204, 753.81625pt x 553.06625pt>
+ [4] [5 <./images/diagram1.jpg>]
+<images/diagram3.jpg, id=218, 753.81625pt x 553.06625pt>
 File: images/diagram3.jpg Graphic file (type jpg)
 
 <use images/diagram3.jpg>
-Package pdftex.def Info: images/diagram3.jpg used on input line 94.
+Package pdftex.def Info: images/diagram3.jpg used on input line 106.
 (pdftex.def)             Requested size: 452.29324pt x 331.8423pt.
- [4] [5 <./images/diagram1.jpg>] [6 <./images/diagram2.jpg>] [7 <./images/diagr
-am3.jpg>] [8] [9] [10] [11] [12] [13] [14] [15]
-[16] (./demo.bbl [17]
+ [6 <./images/diagram2.jpg>] [7 <./images/diagram3.jpg>] [8] [9] [10] [11] <ima
+ges/lattice.png, id=251, 1371.1225pt x 770.88pt>
+File: images/lattice.png Graphic file (type png)
+
+<use images/lattice.png>
+Package pdftex.def Info: images/lattice.png used on input line 185.
+(pdftex.def)             Requested size: 822.67986pt x 462.53157pt.
+
+Overfull \hbox (367.43575pt too wide) in paragraph at lines 185--187
+ [][] 
+ []
+
+[12] [13 <./images/lattice.png>] [14] [15] [16] [17] [18] (./demo.bbl [19]
 Underfull \hbox (badness 1831) in paragraph at lines 9--13
 []\T1/phv/m/n/12 Colin LeMahieu.  \T1/phv/m/sl/12 Nano: A Fee-less Dis-tributed
  Cryp-tocur-rency Net-work\T1/phv/m/n/12 .
@@ -999,22 +1009,28 @@ Overfull \hbox (55.58438pt too wide) in paragraph at lines 15--18
 4096684955433613 
  []
 
-) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 262.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
+
+Underfull \hbox (badness 6141) in paragraph at lines 25--28
+[]\T1/phv/m/n/12 PeerCoin  \T1/phv/m/sl/12 PP-Coin: Peer-to-Peer Crypto-Currenc
+y with Proof-of-Stake
+ []
+
+) [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+ [21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (./demo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `demo.out' has not changed.
 (rerunfilecheck)             Checksum: DAE766B68DE242B6F6F5B18C8249DB60;2169.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
  ) 
 Here is how much of TeX's memory you used:
- 8005 strings out of 493029
- 112373 string characters out of 6136234
- 201859 words of memory out of 5000000
- 11325 multiletter control sequences out of 15000+600000
+ 8019 strings out of 493029
+ 112551 string characters out of 6136234
+ 201917 words of memory out of 5000000
+ 11331 multiletter control sequences out of 15000+600000
  28084 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,8n,31p,767b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1022,10 +1038,10 @@ Here is how much of TeX's memory you used:
 e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/helvetic/uhvro8a.pfb>
-Output written on demo.pdf (21 pages, 206438 bytes).
+Output written on demo.pdf (23 pages, 229863 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 281 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 280 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 334 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
