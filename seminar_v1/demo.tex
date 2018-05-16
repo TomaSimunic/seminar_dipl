@@ -1,7 +1,9 @@
 \documentclass{ferseminar}
 \setlength{\footskip}{20pt}
 \student{Toma Šimunić}
-\voditelj{prof.~dr.~sc. Ivana Podnar Žarko}
+\voditelj{prof.~dr.~sc. Ivana Podnar Žarko, 
+	
+	Federico-Matteo Benčić, mag.ing.}
 \mjestodatum{Zagreb}{April}{2018}
 \naslov{Implementing cryptocurrency NANO\\ as payment option in e-commerce}
 \usepackage{graphicx}
@@ -125,7 +127,7 @@ When Bitcoin was first introduced, it was proposed as a solution to online payme
 Most recently, Bitcoin has seen a negative adoption trend, it was discarded by the world's largest gaming platform \textit{Steam} \cite{Steam}. Valve, the owners of \textit{Steam}, stated that the reasons were high volatility and high transaction fees. During December, 2017. Bitcoin's fees went up to a price of around 52 USD per transaction, making it a luxury to pay in Bitcoin. Transaction fees have decreased from then on, today being 1.3 USD. This still represents a problem for average Bitcoin users.
 
 
-\subsection{Bitcoin performances}
+\subsection{Bitcoin performance}
 Bitcoin's network produces one block every 10 minutes, each transaction has a size of 7761 bytes and each block containing 1 MB. That makes the Bitcoin network average in around 7 transactions per second (TPS). Transactions that have offered the highest processing fee for transactions have a higher chance to be processed first.
 
 
@@ -177,17 +179,13 @@ The overall Nano architecture consists of four individual components:
 	\item Node
 \end{itemize}
 
-\subsubsection{Account}
-An account is the public-key of a digital signature key-pair. The account's public-key also serves as the account's address and is publicly available while the private-key is kept secret. By signing a transaction it is ensured that the contents were approved by the private-key holder and are therefore added to the account's transaction chain. 
+An \textbf{account} is the public-key of a digital signature key-pair. The account's public-key also serves as the account's address and is publicly available while the private-key is kept secret. By signing a transaction it is ensured that the contents were approved by the private-key holder and are therefore added to the account's transaction chain. 
 
-\subsubsection{Block/Transaction}
-In the Nano network each block contains only one transaction. A transaction is an action while the block is the digital encoding of the transaction. These two terms are often used interchangeably since they describe similar terms \cite{Nano}.
+In the Nano network each \textbf{block} contains only one \textbf{transaction}. A transaction is an action while the block is the digital encoding of the transaction. These two terms are often used interchangeably since they describe similar terms \cite{Nano}.
 
-\subsubsection{Ledger}
-The ledger is the global set of accounts where each account has its own transaction chain. This converts a seemingly shared distributed data structure into a non-shared distributed data structure. Each account's transaction chain is stored on Nano network nodes.
+The \textbf{ledger} is the global set of accounts where each account has its own transaction chain. This converts a seemingly shared distributed data structure into a non-shared distributed data structure. Each account's transaction chain is stored on Nano network nodes.
 
-\subsubsection{Node}
-A node is a piece of software running on a computer that conforms to the Nano protocol and participates in the Nano network. The node may either store the entire ledger or a pruned history containing only the last few blocks of each account's blockchain. Nodes communicate with each other to update their ledger and to vote on dilemmas that occur in the network.
+A \textbf{node} is a piece of software running on a computer that conforms to the Nano protocol and participates in the Nano network. The node may either store the entire ledger or a pruned history containing only the last few blocks of each account's blockchain. Nodes communicate with each other to update their ledger and to vote on dilemmas that occur in the network.
 
 \subsection{System overview}
 
@@ -223,17 +221,18 @@ Nano uses the Blake2b hashing algorithm to perform the work. In the Nano network
 
 
 \subsection{Nano performance}
-Nano offers near-instant transactions and does that without requesting fees. The Nano test-network scaled to 10000 transactions-per-second while the main-network has been tested on 300 transactions-per-second \cite{Stress}. In theory the scalability is unlimited and in praxis it is limited by the hardware used by the representatives' nodes.
+Nano offers instantaneous transactions and does that without requesting fees. The Nano test-network scaled to 10000 transactions-per-second while the main-network has been tested on 300 transactions-per-second \cite{Stress}. In theory the scalability is unlimited and in praxis it is limited by the hardware used by the representatives' nodes.
 
 A node requires a voting power equal to 1/1000 of the total voting power to participate in the voting process. This makes the network more secure by not allowing small actors to delay the network with low-performing hardware.
 
+In the Nano network, a transaction is finalized once the nodes, which hold the current state of the ledger, that have 51\% of voting power have the transaction stored in their ledger which happens in a few seconds.
 
 \begin{figure}[ht]
 	\caption{visualization of the block-lattice. 
 		Every transfer of funds requires a
 		send block (S) and a receive block (R), each signed by their account-chain’s
 		owner (A,B,C) \cite{Nano}, Nano whitepaper, page 3}
-	\includegraphics[scale=0.6]{lattice}
+	\includegraphics[scale=0.55]{lattice}
 	\centering
 \end{figure}
 \FloatBarrier
@@ -252,16 +251,16 @@ An analysis of e-commerce trends \cite{Lowry} has shown that there are three are
 
 Leaving a centralized client-server payment system and making a \textbf{Peer-to-Peer distributed electronic system} (P2P)can grant many benefits. The payment processors require fees which can be drastically decreased or removed in a P2P system.
 
-\textbf{Nano} is capable of fulfilling all of those requests. \textbf{Micropayments} are made possible by the non-existence of transaction fees, the low latency of the network and high scalability. \textbf{Mobile payments} will be possible with the final release of the Android and iOS wallets and the development of third-party checkout applications such as Brainblocks. The transactions don't need to be mediated by third-parties which in synergy with non-existent fees make it a perfect match for e-commerce use.
+\textbf{Nano} is capable of fulfilling all of those requests. \textbf{Micropayments} are made possible by the non-existence of transaction fees, the low latency of the network and high scalability. \textbf{Mobile payments} will be possible with the final release of the Android and iOS wallets and the development of third-party checkout applications such as Brainblocks \cite{Brainblocks}. The transactions don't need to be mediated by third-parties which in synergy with non-existent fees make it a perfect match for e-commerce use.
 
 By using Nano, a merchant gains a feeless and instant payment option for his online store. This is a feature that currently isn't provided by any other cryptocurrency or payment processor for conventional currencies. The cost of implementing Nano as a payment option is equal to the cost of running a node in the Nano network which costs around 15\$ a month if renting a cloud service. This makes Nano the best payment solution currently available for every e-commerce that has monthly traffic of at least 500\$.
 
-To use Nano in an e-commerce, a checkout service must exist to serve as an intermediary for the merchant and the customer to settle the order. Brainblocks, an open-source feeless checkout application was developed in early 2018. by an independent programmer \cite{Brainblocks}.
+To use Nano in an e-commerce, a checkout service must exist to serve as an intermediary for the merchant and the customer to settle the order. Many checkout applications were developed in early 2018 by independent programmer teams. One of them is Brainblocks, a feeless payment processing service that can provide checkout services to e-commerces.
 
 Nano faces the same problem as Bitcoin in terms of price volatility. This problem can be solved by implementing a gateway to convert Nano to a conventional currency immediately after settling the transaction. Implementing this solution wouldn't work for Bitcoin due to it having large fees and therefore it would be costly for the e-commerce. 
 \subsection{Nano availability}
 
-A currency has to be available for it to be used. The availability of cryptocurrencies is solved by exhanges. Cryptocurrency exchanges serve as an intermediary between conventional currencies and cryptocurrencies. The requirements of exchanges are:
+A currency has to be available to be used. The availability of cryptocurrencies is solved by exhanges. Cryptocurrency exchanges serve as intermediaries between conventional currencies and cryptocurrencies. The requirements of exchanges are:
 \begin{itemize}
 	\item low fees
 	\item legality in their area of operation
@@ -269,23 +268,26 @@ A currency has to be available for it to be used. The availability of cryptocurr
 	\item liquidity
 \end{itemize}
 
-In terms of use as a currency, Nano is still in it's early stage and the technology is different than any other distributed ledger technology. These two things make implementing Nano an issue for most exchanges. Nevertheless, some exchanges have decided to take that step and pave the way for other exchanges. Still, the exchanges that have implemented Nano do not have pairings with conventional currencies and therefore the customer has to buy another cryptocurrency, which has a conventional currency pairing, and then transfer it to an exchange that has Nano implemented. Among the cryptocurrency exchanges that have implemented Nano, the most prominent ones are \textbf{Nanex} and \textbf{Binance}.
+In terms of use as a currency, Nano is still in it's early stage and the technology is different than any other distributed ledger technology that cryptocurrencies use. These two things make implementing Nano an issue for most exchanges. Nevertheless, some exchanges have decided to take that step and pave the way for other exchanges. Still, the exchanges that have implemented Nano do not have pairings with conventional currencies and therefore the customer has to buy another cryptocurrency, which has a conventional currency pairing, and then transfer it to an exchange that has Nano implemented. Among the cryptocurrency exchanges that have implemented Nano, the most prominent ones are \textbf{Nanex}, \textbf{Binance} and \textbf{CoinFalcon}.
 
 \subsubsection{Nanex}
 Nanex is a non-official Nano cryptocurrency exchange that was developed in early 2018. by an independent programmer. It uses Nano as the primary trading pair making it the first Nano exchange. It has the best uptime percentage which is suggesting it has has a quality implementation of the new cryptocurrency. It has low trading volume but, due to highest uptime percentage, provides the most secure service.
 
 \subsubsection{Binance}
 Binance is one of the biggest cryptocurrency exchanges in the world. It has enabled Nano trading in early 2018. Since then, it had shutdown Nano deposits and withdrawals quite a few times due to node fixes and optimizations. It has a much higher trading volume than Nanex which makes it a better option for bigger purchases.
+
+\subsubsection{CoinFalcon}
+The first trading NANO/EUR (Nano to Euro) trading pair has been opened on CoinFalcon exchange in May, 2018. Euros can be deposited and withdrawn from CoinFalcon via the SEPA payment protocol. This is an exchange with low volume and therefore still isn't capable of providing optimal services to e-commerces. It charges 1€ for deposits and doesn't charge Nano withdrawals. 
  
-\subsection{Payment gateway}
-Implementing a cryptocurrency in an e-commerce requires a software that has to be run on a server to process and confirm transactions. When the transaction is confirmed and the funds are settled on the merchant's account, the merchant has to secure his funds by trading them to a less volatile asset, a conventional currency. For a merchant to transfer his Nano to a conventional currency, he would first have to trade it for a cryptocurrency that can be traded for a conventional currency. The first trading NANO/EUR (Nano to Euro) trading pair has been opened on CoinFalcon exchange. Euros can be deposited and withdrawn from CoinFalcon via SEPA payments. 
+\subsection{Payment gateways}
+Implementing a cryptocurrency in an e-commerce requires a software that has to be run on a server to process and confirm transactions. When the transaction is confirmed and the funds are settled on the merchant's account, the merchant has to secure his funds by trading them to a less volatile asset, a conventional currency. For a merchant to transfer his Nano to a conventional currency, he would first have to trade it for a cryptocurrency that can be traded for a conventional currency. This method would require paying transaction fees for the cryptocurrency used as a median and thus would defeat the purpose of having a feeless cryptocurrency. 
 
 Payment gateway solutions using Nano are:
 \begin{itemize}
 	\item Brainblocks -  free checkout service
 	\item 1up Coin - Twitch gaming platform donations using Nano
 	\item ArrowPay - payment integration for e-commerces
-	\item NaNode.co node API - RPC commands for node integration
+	\item NaNode.co node API - provides RPC commands for payment integration
 \end{itemize}
 
 \section{Conclusion}
@@ -311,6 +313,6 @@ Bitcoin's high transaction fees and slow confirmation time make it impractical t
 Conventional payment processors have the advantage of being able to process more TPS than Nano. Nano is a protocol which is still in development and the Nano network hasn't reached transaction saturation to this day so it still has room to grow, even without protocol improvements. 
 \dodajliteraturu{bazaLiterature}
 \section{Abstract}
-Nano is a cryptocurrency that has feeless and instantaneous transactions. Those attributes make it the optimal payment solution for e-commerces. Bitcoin was first introduced as a currency for online payment but has been abandoned by some e-commerces due to having high fees and a volatile price. Card payment processors provide seemingly instant transactions but take large fees from the e-commerces, as do third-party payment providers.  
+Nano is a cryptocurrency based on the directed acyclic graph (DAG) block-lattice architecture. It is an architecture in which every account has it's own blockchain. Nano uses Delegated Proof of Stake (DPoS)mechanism to reach consensus on the ledger state and Proof of Work (PoW) to prevent transaction spamming. Bitcoin was first introduced as a currency for online payment but has been abandoned by some e-commerces due to having high fees and a volatile price. Bitcoin's PoW mechanism consumes enormous amounts of electricity which make Bitcoin transaction fees expensive. Nano's consensus protocol uses much less electricity and, therefore, can provide feeless transactions. Since every account in the Nano network does their own PoW, transactions are instantaneous. Being feeless and instant makes it the optimal payment solution for e-commerces. Card payment processors provide seemingly instant transactions but take large fees from the e-commerces, as do third-party payment providers, but provide security and take risk for the customer. Using cryptocurrencies transfers the risk of online payment from the payment provider to the cryptocurrency users. Payment solutions for e-commerces require payment gateways to process transactions and provide services and exchanges to convert conventional currencies to cryptocurrencies.  
 
 \end{document}
