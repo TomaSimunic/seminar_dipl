@@ -41,6 +41,17 @@ Nano main-net stress test
 \newblock {\em Stress Testing The RaiBlocks Network: Part II}
 \newblock https://medium.com/@bnp117/stress-testing-the-raiblocks-network-part-ii-def83653b21f
 
+\bibitem{github}
+Nano GitHub repository
+\newblock {\em Nano is a cryptocurrency - nano.org}
+\newblock https://github.com/nanocurrency/raiblocks
 
+\bibitem{struja}
+Bitcoin Energy Consumption
+\newblock https://digiconomist.net/bitcoin-energy-consumption
+
+\bibitem{fees}
+Bitcoin Transaction Fees
+\newblock https://bitcoinfees.info/
 
 \end{thebibliography}
