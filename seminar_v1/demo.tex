@@ -22,15 +22,15 @@ Commerce is an activity of buying and selling. Currencies are arbitrary represen
 	\item Digital currencies
 \end{enumerate}
 
-Blockchain technology and the Proof-of-Work concept made decentralized digital currencies possible. With the emergence of decentralized digital currencies, hereinafter referred to as cryptocurrencies, some e-commerces started implementing different cryptocurrencies as payments options. Due to their price volatility, cryptocurrencies present a risk to the merchant, but on the other hand provide a few reasons for adopting the new payment option.
+Blockchain technology and the Proof of Work concept made decentralized digital currencies possible. With the emergence of decentralized digital currencies, hereinafter referred to as cryptocurrencies, some e-commerces started implementing different cryptocurrencies as payments options. Due to their price volatility, cryptocurrencies present a risk to the merchant, but on the other hand provide a few reasons for adopting the new payment option.
 
 One of the motivations for implementing cryptocurrency payment options is to attract new customers by providing a new solution. Cryptocurrency enthusiasts often look for shops that accept their currency and shops gain loyal customers this way. Another, and more important motivation, is that the fees for processing transactions are much lower using some cryptocurrencies than conventional card payment options.
 
-The first, and most popular, cryptocurrency, Bitcoin, was released in 2009 as an open-source software by Satoshi Nakamoto. Since then, Bitcoin has gained a lot in value and has seen some adoption by e-commerces, as well as regular commerces. The increase in Bitcoin's price had a negative impact on it's adoption as a currency because it resulted in transaction fees rising above those of using most other online payment options. This phenomenon has increased the need for an alternative solution.
+The first and most popular cryptocurrency, Bitcoin, was released in 2009 as an open-source software by Satoshi Nakamoto. Since then, Bitcoin has gained a lot in value and has seen some adoption by e-commerces, as well as regular commerces. The increase in Bitcoin's price had a negative impact on it's adoption as a currency because it resulted in transaction fees rising above those of using most other online payment options. This phenomenon has increased the need for an alternative solution.
 
-Cryptocurrency Nano was first introduced in 2014. It stands out from other cryptocurrencies for having fee-less and instant transactions, which is made possible by using the block-lattice structure. This makes it a viable contestant for use in e-commerce.
+Cryptocurrency Nano was first introduced in 2014. It stands out from other cryptocurrencies for having feeless and instant transactions, which is made possible by using the block-lattice structure. This makes it a viable contestant for use in e-commerce.
 
-This paper will analyze and compare conventional payment processes, payment processes using a third-party and Peer-to-Peer payment processes using PayPal, Bitcoin and Nano as examples.
+This paper will analyze and compare conventional payment processing, payment processing using a third-party and Peer-to-Peer payment processing using PayPal, Bitcoin and Nano as examples.
 
 
 \section{E-commerce payment systems}
@@ -96,7 +96,7 @@ The \textbf{shopping cart} is still responsible for maintaining a connection bet
 
 The \textbf{payment gateway} authorizes the transaction and holds the funds in trust for the merchant. Transfer to the merchant's local bank account occurs on a regular basis, predetermined in the subscription contract.
 
-Modern services that could be categorized as third-party payment providers are \textbf{Google pay}, \textbf{Apple pay} \cite{Google}, \textbf{PayPal} and \textbf{Shopify}. PayPal, while being a third-party payment provider, uses a different business architecture which will be explained in the next section.
+Modern services that could be categorized as third-party payment providers are \textbf{Google pay} \cite{Google}, \textbf{Apple pay}, \textbf{PayPal} and \textbf{Shopify}. PayPal, while being a third-party payment provider, uses a different business architecture which will be explained in the next section.
 
 \begin{figure}[ht]
 	\caption{Third-party payment processing diagram}
@@ -109,11 +109,11 @@ Modern services that could be categorized as third-party payment providers are \
 
 Peer-to-Peer payment is a form of online payment that provides an inexpensive way to accept online payment services. PayPal is recognized as the most prominent among the P2P payment services. PayPal was established in 1998 and is owned by eBay since 2002. For a P2P service to work, both the merchant and the customer need to have an account with the same P2P provider because the payment process is handled internally through the P2P provider. Figure 3 shows a typical P2P transaction.
 
-There are a few differences between PayPal's P2P solution and cryptocurrencies. First, PayPal uses a fee equaling around 3\% plus a small fixed amount per transaction while cryptocurrency fees are not percentage fees and are not dependent on the amount being sent or they have no fees, as shown in the case of Nano. The second difference is that PayPal is directly connected to their users bank accounts or credit / debit card acounts to charge users while trading with cryptocurrencies is direct from the customer's to the merchant's cryptocurrency wallet. Both systems require high-level security management. The difference is that in the Nano network the protocol provides security while in the PayPal network the security is provided by the web service. That is the reason why PayPal fees are generally higher than cryptocurrency fees.
+There are a few differences between PayPal's P2P solution and cryptocurrencies. First, PayPal uses a fee equaling around 3\% plus a small fixed amount per transaction while cryptocurrency fees are not percentage fees and are not dependent on the amount being sent or they have no fees, as shown in the case of Nano. The second difference is that PayPal is directly connected to their users bank accounts or credit / debit card acounts to charge users while trading with cryptocurrencies is direct from the customer's to the merchant's cryptocurrency wallet. Both systems require high-level security management. The difference is that in the Nano network the protocol provides security while in the PayPal network the security and risk management is provided by the web service. That is the reason why PayPal fees are generally higher than cryptocurrency fees.
 
-\begin{figure}[h!]
+\begin{figure}[ht]
 	\caption{Peer-to-Peer payment processing diagram}
-	\includegraphics[scale=0.215]{diagram3}
+	\includegraphics[scale=0.19]{diagram3}
 	\centering
 \end{figure}
 \FloatBarrier
@@ -160,7 +160,7 @@ There are \textbf{no chargebacks} with Bitcoin payment. Once a transaction is co
 \textbf{Power inefficiency.} The Bitcoin network consumes an estimated 66.98 TWh per year using an average 903 KWh for a transaction \cite{struja}. This is the equivalent of the yearly energy expenditure of the Czech Republic.
 
 \begin{figure}[ht]
-	\caption{Bitcoin transaction fees chart \cite{fees}}
+	\caption{Bitcoin transaction fees chart \cite{fees}, [\$/date]}
 	\includegraphics[scale=0.5]{btcfee}
 	\centering
 \end{figure}
@@ -206,19 +206,19 @@ An upgrade called the \textbf{universal transaction} has been introduced to repl
 
 \subsubsection{Delegated Proof of Stake}
 
-The network reaches consensus via a delegated Proof of Stake (DPoS)voting mechanism. To understand that voting mechanism, Proof of Stake (PoS) first has to be explained. PoS was first presented by PeerCoin \cite{Peercoin} as an alternative to the electricity-inefficient Proof of Work consensus mechanism used by Bitcoin. The next block in the PoS network isn't mined by expensive equipment but is mined by a network participant that is chosen by combining two parameters, coin amount owned by the participant and randomizing.
+The network reaches consensus via a delegated Proof of Stake (DPoS) voting mechanism. To understand the DPoS voting mechanism, Proof of Stake (PoS) has to be explained. PoS was first presented by PeerCoin \cite{Peercoin} as an alternative to the electricity-inefficient Proof of Work consensus mechanism used by Bitcoin. The next block in the PoS network isn't mined by expensive equipment but is mined by a network participant that is chosen by combining two parameters, coin amount owned by the participant and randomizing.
 
 Delegated Proof of Stake (DPoS) is a PoS variant which includes delegating your account's Nano amount, which represents the users voting power, to a node which will vote on the users behalf. This is useful because the Nano network doesn't have block mining in the conventional sense which will be explained further. 
 
 Nano accounts choose delegates using the change block. Delegate nodes are called representatives in the Nano network. By choosing a representative they delegate their voting power to that particular representative's node. Nano users should pick representatives they trust to avoid someone using their votes to attack the Nano network. A vote is initiated when an account attempts to make a double-spend attack. A double-spend attack happens when an account attempts to spend the same funds more than once. When such an attack happens, the nodes vote on which transaction they will confirm. The remaining transactions are discarded.
 
-Representatives in the Nano network aren't awarded with new Nanos for securing the network. Their incentive for securing the network is that they can use the Nano currency as a payment option for their e-commerce or any other web activity. This provides merchants an option to enable online transactions for the cost of running a node which is much lower than paying an online payment processor fees ranging from 1-3\% per transaction. The cost of running a node ranges form 10-20\$, depending on the quality of the node that is needed for the specific web activity.
+Representatives in the Nano network aren't awarded with new Nanos for securing the network. Their incentive for securing the network is that they can use the Nano currency as a payment option for their e-commerce or any other web activity. This provides merchants with an option to enable online transactions for the cost of running a node which is much lower than paying an online payment processor fees ranging from 1-3\% per transaction. The cost of running a node ranges form 10-20\$, depending on the quality of the node that is needed for the specific web activity, and can be accomplished by renting a cloud server and deploying the node software \cite{github}.
 
 \subsubsection{Proof of Work}
 
 For a transaction to be broadcasted to the network, Proof of Work has to be performed. Proof of Work (PoW) is different for the Nano and Bitcoin networks. Bitcoin uses PoW to reach ledger consensus while Nano uses PoW as a spamm prevention tool, similar to HashCash. PoW is performed by hashing the previous block in the account chain. In the Nano network it is performed by the device that is performing the transaction or by a device designated to perform the PoW. The next transaction in an account chain can be pre-mined, since the previous block is already known, which makes transactions appear instantaneous to the end user. This can not be done in the Bitcoin network because a block in the Bitcoin network is a collection of transactions mined by many different actors and the block in the Nano network contains one transaction which can only be broadcasted and mined by the private-key holder.
 
-Nano uses the Blake2b hashing algorithm to perform the work. In the Nano network, the Proof of Work difficulty is set low and is simply used as an anti-spamm tool. The benefit of using a low-difficulty PoW is that transactions seem instantaneous.
+Nano uses the Blake2b hashing algorithm to perform the work. In the Nano network, the PoW difficulty is set low and is simply used as an anti-spamm tool. The benefit of using a low-difficulty PoW is that transactions seem instantaneous.
 
 
 \subsection{Nano performance}
@@ -246,17 +246,17 @@ An analysis of e-commerce trends \cite{Lowry} has shown that there are three are
 	\item distributed payment systems
 \end{itemize}
 
-\textbf{Micropayments} are small electronic payments. The difficulty in implementing micropayments is in charging transaction fees which can possibly be greater than the payment itself.
+\textbf{Micropayments} are small electronic payments. The difficulty in implementing micropayments lies in charging transaction fees which can possibly be greater than the payment itself.
 
 \textbf{Mobile payments} are payments made from a mobile phone. Prior to the emergence of smartphones, researchers were investigating the potential use of mobile devices in short range wireless networks for commerce. With current technology, mobile devices have the ability to reach and interact with any website available on the World Wide Web. In addition, many cryptocurrency wallets offer smartphone applications which provides a better solution than the short range wireless networks that were being researched in 2006.  
 
-Leaving a centralized client-server payment system and making a \textbf{Peer-to-Peer distributed electronic system} (P2P)can grant many benefits. The payment processors require fees which can be drastically decreased or removed in a P2P system.
+Leaving a centralized client-server payment system and making a \textbf{Peer-to-Peer distributed electronic system} (P2P) can grant many benefits. The payment processors require fees which can be drastically decreased or removed in a P2P system.
 
 \textbf{Nano} is capable of fulfilling all of those requests. \textbf{Micropayments} are made possible by the non-existence of transaction fees, the low latency of the network and high scalability. \textbf{Mobile payments} will be possible with the final release of the Android and iOS wallets and the development of third-party checkout applications such as Brainblocks \cite{Brainblocks}. The transactions don't need to be mediated by third-parties which in synergy with non-existent fees make it a perfect match for e-commerce use.
 
-By using Nano, a merchant gains a feeless and instant payment option for his online store. This is a feature that currently isn't provided by any other cryptocurrency or payment processor for conventional currencies. The cost of implementing Nano as a payment option is equal to the cost of running a node in the Nano network which costs around 15\$ a month if renting a cloud service. This makes Nano the best payment solution currently available for every e-commerce that has monthly traffic of at least 500\$.
+By using Nano, a merchant gains a feeless and instant payment option for his online store. This is a feature that currently isn't provided by any other cryptocurrency or payment processor for conventional online payment. The cost of implementing Nano as a payment option is equal to the cost of running a node in the Nano network which is the cost of renting a cloud server. This makes Nano the best payment solution currently available for e-commerces.
 
-To use Nano in an e-commerce, a checkout service must exist to serve as an intermediary for the merchant and the customer to settle the order. Many checkout applications were developed in early 2018 by independent programmer teams. One of them is Brainblocks, a feeless payment processing service that can provide checkout services to e-commerces.
+To use Nano in an e-commerce, a checkout service must exist to serve as an intermediary for the merchant and the customer to settle the order. Many checkout applications were developed in early 2018 by independent programmer teams. One of them is Brainblocks \cite{Brainblocks}, a feeless payment processing service that can provide checkout services to e-commerces.
 
 Nano faces the same problem as Bitcoin in terms of price volatility. This problem can be solved by implementing a gateway to convert Nano to a conventional currency immediately after settling the transaction. Implementing this solution wouldn't work for Bitcoin due to it having large fees and therefore it would be costly for the e-commerce. 
 \subsection{Nano availability}
@@ -272,16 +272,16 @@ A currency has to be available to be used. The availability of cryptocurrencies 
 In terms of use as a currency, Nano is still in it's early stage and the technology is different than any other distributed ledger technology that cryptocurrencies use. These two things make implementing Nano an issue for most exchanges. Nevertheless, some exchanges have decided to take that step and pave the way for other exchanges. Still, the exchanges that have implemented Nano do not have pairings with conventional currencies and therefore the customer has to buy another cryptocurrency, which has a conventional currency pairing, and then transfer it to an exchange that has Nano implemented. Among the cryptocurrency exchanges that have implemented Nano, the most prominent ones are \textbf{Nanex}, \textbf{Binance} and \textbf{CoinFalcon}.
 
 \subsubsection{Nanex}
-Nanex is a non-official Nano cryptocurrency exchange that was developed in early 2018. by an independent programmer. It uses Nano as the primary trading pair making it the first Nano exchange. It has the best uptime percentage which is suggesting it has has a quality implementation of the new cryptocurrency. It has low trading volume but, due to highest uptime percentage, provides the most secure service.
+Nanex is a non-official Nano cryptocurrency exchange that was developed in early 2018 by an independent programmer. It uses Nano as the primary trading pair making it the first Nano exchange. It has the best uptime percentage which is suggesting it has has a quality implementation of the new cryptocurrency. It has low trading volume but, due to highest uptime percentage, provides the most secure service.
 
 \subsubsection{Binance}
-Binance is one of the biggest cryptocurrency exchanges in the world. It has enabled Nano trading in early 2018. Since then, it had shutdown Nano deposits and withdrawals quite a few times due to node fixes and optimizations. It has a much higher trading volume than Nanex which makes it a better option for bigger purchases.
+Binance is one of the biggest cryptocurrency exchanges in the world. It has enabled Nano trading in early 2018. Since then, it had shutdown Nano deposits and withdrawals quite a few times due to node fixes and optimizations. It has a higher trading volume than Nanex which makes it a better option for large purchases.
 
 \subsubsection{CoinFalcon}
 The first trading NANO/EUR (Nano to Euro) trading pair has been opened on CoinFalcon exchange in May, 2018. Euros can be deposited and withdrawn from CoinFalcon via the SEPA payment protocol. This is an exchange with low volume and therefore still isn't capable of providing optimal services to e-commerces. It charges 1€ for deposits and doesn't charge Nano withdrawals. 
  
 \subsection{Payment gateways}
-Implementing a cryptocurrency in an e-commerce requires a software that has to be run on a server to process and confirm transactions. When the transaction is confirmed and the funds are settled on the merchant's account, the merchant has to secure his funds by trading them to a less volatile asset, a conventional currency. For a merchant to transfer his Nano to a conventional currency, he would first have to trade it for a cryptocurrency that can be traded for a conventional currency. This method would require paying transaction fees for the cryptocurrency used as a median and thus would defeat the purpose of having a feeless cryptocurrency. 
+Implementing a cryptocurrency in e-commerce requires software that has to process and confirm transactions. When the transaction is confirmed, and the funds are settled on the merchant's account, the merchant has to secure his funds by trading them to a less volatile asset, a conventional currency. For a merchant to transfer his Nano to a conventional currency, he would first have to trade it for a cryptocurrency that can be traded for a conventional currency. This method would require paying transaction fees for the cryptocurrency used as a median and thus would defeat the purpose of having a feeless cryptocurrency. 
 
 Payment gateway solutions using Nano are:
 \begin{itemize}
@@ -292,7 +292,7 @@ Payment gateway solutions using Nano are:
 \end{itemize}
 
 \section{Conclusion}
-The three payment methods analyzed in this paper all have their pros and cons. While the cryptocurrency options give you greater control over your money, they are not universally accepted in e-commerce. The challenge for cryptocurrencies is mass adoption. For mass adoption to be possible, they have to bring greater value to the table than their competitors. Some e-commerces have made the decision to open their market for cryptocurrencies to attract new customers. This was mostly done by small e-commerces because they have a higher incentive to take risks. Payment providers, such as Coinbase, Brainblocks and others, have recognized this and have started building new solutions for online cryptocurrency payments.
+The three payment methods analyzed in this paper all have their pros and cons. While the cryptocurrency options give you greater control over your money, they are not universally accepted in e-commerce. The challenge for cryptocurrencies is mass adoption. For mass adoption to be possible, they have to bring greater value to the table than their competitors. Some e-commerces have made the decision to open their market for cryptocurrencies to attract new customers. This was mostly done by small e-commerces because they have a higher incentive to take risks. Payment providers, such as Coinbase, Brainblocks and others, have recognized this potential and have started building new solutions for online cryptocurrency payments.
 
 
 \begin{center}
@@ -309,11 +309,11 @@ The three payment methods analyzed in this paper all have their pros and cons. W
 	\end{tabular}
 \end{center}
 
-Nano brings greater value to the table than any of it's competitors and, with the assumption that the network scalability is only limited by the nodes' hardware \cite{Nano}, as demonstrated in the test-net \cite{github}, it is the optimal solution for payment processing online. It offers feeless and instant transactions and that is the fastest and most cost effective level any currency can achieve.
+Nano brings greater value to the table than any of it's competitors and, with the assumption that the network scalability is only limited by the nodes' hardware \cite{Nano}, as demonstrated in the test-net, it is the optimal solution for payment processing online. It offers feeless and instant transactions and that is the fastest and most cost effective level any currency can achieve.
 Bitcoin's high transaction fees and slow confirmation time make it impractical to use for transfering value. 
 Conventional payment processors have the advantage of being able to process more TPS than Nano. Nano is a protocol which is still in development and the Nano network hasn't reached transaction saturation to this day so it still has room to grow, even without protocol improvements. 
 \dodajliteraturu{bazaLiterature}
 \section{Abstract}
-Nano is a cryptocurrency based on the directed acyclic graph (DAG) block-lattice architecture. It is an architecture in which every account has it's own blockchain. Nano uses Delegated Proof of Stake (DPoS)mechanism to reach consensus on the ledger state and Proof of Work (PoW) to prevent transaction spamming. Bitcoin was first introduced as a currency for online payment but has been abandoned by some e-commerces due to having high fees and a volatile price. Bitcoin's PoW mechanism consumes enormous amounts of electricity which make Bitcoin transaction fees expensive. Nano's consensus protocol uses much less electricity and, therefore, can provide feeless transactions. Since every account in the Nano network does their own PoW, transactions are instantaneous. Being feeless and instant makes it the optimal payment solution for e-commerces. Card payment processors provide seemingly instant transactions but take large fees from the e-commerces, as do third-party payment providers, but provide security and take risk for the customer. Using cryptocurrencies transfers the risk of online payment from the payment provider to the cryptocurrency users. Payment solutions for e-commerces require payment gateways to process transactions and provide services and exchanges to convert conventional currencies to cryptocurrencies.  
+Nano is a cryptocurrency based on the directed acyclic graph (DAG) block-lattice architecture. It is an architecture in which every account has it's own blockchain. Nano uses Delegated Proof of Stake (DPoS)mechanism to reach consensus on the ledger state and Proof of Work (PoW) to prevent transaction spamming. Bitcoin was first introduced as a currency for online payment but has been abandoned by some e-commerces due to having high fees and a volatile price. Bitcoin's PoW mechanism consumes enormous amounts of electricity which make Bitcoin transaction fees expensive. Nano's consensus protocol uses much less electricity and, therefore, can provide feeless transactions. Since every account in the Nano network does their own PoW, transactions are instantaneous. Being feeless and instant makes it the optimal payment solution for e-commerces. Card payment processors provide seemingly instant transactions but take large fees from the e-commerces, as do third-party payment providers, but provide security and take risk for the customer. Using cryptocurrencies transfers the risk of online payment from the payment provider to the cryptocurrency users. Payment solutions for e-commerces require payment gateways to process transactions and provide services and exchanges to convert conventional currencies to cryptocurrencies and vice versa. Development of such gateways will complete Nano as the optimal payment solution for e-commerces. 
 
 \end{document}
